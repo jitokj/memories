@@ -9,10 +9,13 @@ import { getPosts } from "./actions/posts";
 
 const App = () => {
   const classes = useStyles();
+
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getPosts());
   }, [dispatch]);
+
   return (
     <Container maxWidth="lg">
       <AppBar className={classes.appBar} position="static" color="inherit">
@@ -33,6 +36,7 @@ const App = () => {
             justify="space-between"
             alignItems="stretch"
             spacing={3}
+            wrap="nowrap"
           >
             <Grid item xs={12} sm={7}>
               <Posts />
